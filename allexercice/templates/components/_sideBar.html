@@ -1,0 +1,8 @@
+{% with request.resolver_match.url_name as url_name %}
+{% load static %}
+<nav class="nav flex-column" id="sidebar" style="background-color: transparent">
+    <a {% if url_name == 'algorithme' %}style="background-color: rgba(5, 19, 35, 0.06)"{% endif %} class="nav-link" href="../algorithme"><i class="bi bi-file-binary"></i> Factorielle</a>
+    <a {% if url_name == 'algorithme1' %}style="background-color: rgba(5, 19, 35, 0.06)"{% endif %}  class="nav-link" href="../algorithme1"><i class="bi bi-card-list"></i>Exercice 2</a>
+    <a {% if url_name == 'algorithme2' %}style="background-color: rgba(5, 19, 35, 0.06)"{% endif %} class=" nav-link" href="../algorithme2"><i class="bi bi-boxes"></i>Exercice 3</a>
+</nav>
+{% endwith %}

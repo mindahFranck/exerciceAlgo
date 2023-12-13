@@ -1,0 +1,59 @@
+{% extends 'index.html' %}
+{% block content %}
+    <div class="col-12 d-flex">
+        <div class="col-6" style="margin-right: 50px" data-aos="fade-up"
+             data-aos-duration="1000">
+            <h3>Calcul de n! ou determiner si un nombre est premier</h3>
+            <div class="card" style="width: 100%;">
+
+                <div class="card-body">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Choisir le type de l'exercice</label>
+
+                            <select required class="form-control" name="options">
+                                <option value="factorielle" aria-describedby="options">
+                                    Calcul de Factorielle
+                                </option>
+                                <option value="nombrepremier">
+                                    Determiner si le nombre est premier
+                                </option>
+                            </select>
+                            <div id="options" class="form-text">Veuillez entrer le type.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Entrez un nombre</label>
+                            <input type="number" required min="0" name="nombre" class="form-control" id="exampleInputEmail1"
+                                   aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">Veuillez entrer un nombre.</div>
+                        </div>
+                     <button type="submit" class="btn btn-primary"
+                             hx-post="{% url 'calculfacteur' %}"
+                             hx-target="#result"
+                             hx-swap="innerHTML"
+
+                     >Calculer</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-4">
+            <div class="card" style="width: 100%;height: 100%">
+
+                <div class="card-body d-flex justify-content-center align-items-center ">
+                    <div class="d-block" id="result" style="width: 60%;text-align: center;font-weight: 500">
+                        <i class="bi bi-info-circle" style="font-size: 58px"></i>
+                        <p style="text-align: center;">
+                            Veuillez entrer des données correctes pour voir le résultat.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+{% endblock content %}

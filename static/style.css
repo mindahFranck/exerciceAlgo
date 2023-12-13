@@ -1,0 +1,32 @@
+#sidebar{
+    text-align: center;
+
+}
+.nav-link{
+    color: #051323 !important;
+    font-size: 15px;
+    font-weight: 500 !important;
+    border-radius: 20px !important;
+}
+.nav-link:hover{
+    background-color: rgba(56, 133, 223, .2) !important;
+}
+#active{
+    background-color: rgba(56, 133, 223, .2) !important;
+}
+.card-header{
+    background-color: white !important;
+    font-weight: 500;
+    font-size: 15px;
+}
+i{
+    color: rgba(34, 119, 219, 0.9);
+    margin-right: 5px;
+}
+input{
+    background: #f5f6f6 !important;
+}
+.card{
+    border-radius: 20px !important;
+    border: none !important;
+}
